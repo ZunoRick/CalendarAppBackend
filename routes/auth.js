@@ -16,7 +16,9 @@ router.post('/',
     check('password', 'El password debe de ser de 6 caracteres').isLength({ min: 6 }),
     validarCampos
   ],
-  loginUsuario)
+  loginUsuario
+)
+
 router.post(
   '/new', 
   [ // middlewares
@@ -25,7 +27,9 @@ router.post(
     check('password', 'El password debe de ser de 6 caracteres').isLength({ min: 6 }),
     validarCampos
   ],
-  crearUsuario)
+  crearUsuario
+)
+
 router.get('/renew', revalidarToken)
 
 module.exports = router
