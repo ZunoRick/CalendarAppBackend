@@ -5,6 +5,7 @@ const { generarJWT } = require('../helpers/jwt')
 
 const crearUsuario = async(req, res = response) => {
   const { email, password } = req.body
+  console.log(req.body);
 
   try {
     let usuario = await Usuario.findOne({ email })
@@ -93,6 +94,8 @@ const revalidarToken = async (req, res = response) => {
 
   res.json({
     ok: true,
+    uid,
+    name,
     token
   })
 }
